@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 // npm i cookie parser
 const cookieParser = require("cookie-parser");
+api.use(eprexss.static('backend/build'));
 // jsonwebtoken
 // token name is -> JWT & mechanism -> cookies
 // repersent -> collection
@@ -34,7 +35,8 @@ app.use("/api/v1/review", reviewRouter);
 // delete user profile
 
 // locahost:3000 -> express API 
-app.listen(3000, function () {
+const port=process.env.PORT||5000;
+app.listen(port, function () {
     console.log("server started at port 3000");
 })
 
